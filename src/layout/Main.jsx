@@ -13,13 +13,13 @@ class Main extends React.Component {
 
     searchMovies = (str, type = 'all') => {
         this.setState({loading: true});
-        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
+        fetch(`https://www.omdbapi.com/?apikey=5322316a&s=${str}${type !== 'all' ? `&type=${type}` : ''}`)
             .then(responce => responce.json())
             .then(data => this.setState({ movies: data.Search, loading: false}))
     }
 
     componentDidMount() {
-        fetch(`https://www.omdbapi.com/?apikey=${API_KEY}&s=matrix`)
+        fetch(`https://www.omdbapi.com/?apikey=5322316a&s=matrix`)
             .then(responce => responce.json())
             .then(data => this.setState({ movies: data.Search, loading: false }))
             .catch((err) => {
